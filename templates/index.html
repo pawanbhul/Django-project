@@ -1,35 +1,18 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django templates example</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Student Result</h1>
-    <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Marks</th>
-            <th>Age</th>
-            <th>Result</th>
-        </tr>
-
-        {% for s in students %}
-        <tr>
-            <td>{{ s.name }}</td>
-            <td>{{ s.marks }}</td>
-            <td>{{ s.age }}</td>
-            <td>
-                {% if s.marks > 50 %}
-                pass
-                {% else %}
-                fail
-                {% endif %}
-            </td>
-        
-        </tr>
+    <h1>Students List</h1>
+    
+    <ol type=1>
+    {% for s in students %}
+    <li>{{ s }}</li>
         {% endfor %}
-    </table>
+    </ol>
+    
 </body>
-</html>
+</html> {% endcomment %}

@@ -3,16 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Django templates example</title>
 </head>
 <body>
-    <h1>Students List</h1>
-    
-    <ol type=1>
-    {% for s in students %}
-    <li>{{ s }}</li>
+    <h1>Student Result</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Is_active</th>
+            <th>Result</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.marks }}</td>
+            <td>{{ s.age }}</td>
+            <td>{{ s.city }}</td>
+            <td>{{ s.email }}</td>
+            <td>{{ s.is_active }}</td>
+            <td>
+                {% if s.marks > 50 %}
+                pass
+                {% else %}
+                fail
+                {% endif %}
+            </td>
+        
+        </tr>
         {% endfor %}
-    </ol>
-    
+    </table>
+
+     <h1>Single student</h1>
+    <span>{{student_1.name}}</span>
+    <span>{{student_1.marks}}</span>
+    <span>{{student_1.age}}</span>
+    <span>{{student_1.city}}</span>
+    <span>{{student_1.email}}</span>
+    <span>{{student_1.is_active}}</span>
+
+    <h1>Students with marks>80</h1>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Marks</th>
+
+        <th>Age</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Is active</th>
+
+        <th>Result</th>
+      </tr>
+
+      {% for s in students_marks %}
+      <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.marks }}</td>
+
+        <td>{{ s.age }}</td>
+        <td>{{ s.city }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.is_active }}</td>
+
+        <td>
+            {% if s.marks > 40 %} 
+            Pass 
+            {% else %} 
+            Fail 
+            {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
 </body>
 </html>

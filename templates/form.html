@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form method="POST">
+            {% csrf_token %}   
+            Name: <input type="text" name="name" /> <br></br>
+            Age: <input type="number" name="age" /> <br></br>
+            Marks: <input type="number" name="marks" /> <br></br>
+            City: <input type="text" name="city" /> <br></br>
+            Email: <input type="email" name="email" /> <br></br>
+            
+            <button type="submit"> Submit </button>
+        </form>
+    </body>
+</html>
