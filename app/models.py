@@ -1,5 +1,5 @@
 from django.db import models
-
+# from .models import Student
 # Create your models here.
 """
 model: python class used to represent a database table

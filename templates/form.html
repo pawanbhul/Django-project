@@ -1,18 +1,19 @@
 <html>
     <head>
         <title>Document</title>
+        <style>
+            #std-name{
+            color: aquamarine;
+            }
+    </style>
     </head>
-
     <body>
+        <h1>Student Form</h1>
         <form method="POST">
-            {% csrf_token %}   
-            Name: <input type="text" name="name" /> <br></br>
-            Age: <input type="number" name="age" /> <br></br>
-            Marks: <input type="number" name="marks" /> <br></br>
-            City: <input type="text" name="city" /> <br></br>
-            Email: <input type="email" name="email" /> <br></br>
+           {% csrf_token %}
+            {{ form }}
             
-            <button type="submit"> Submit </button>
+            <button type="submit">Submit</button>
         </form>
     </body>
 </html>

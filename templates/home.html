@@ -16,6 +16,7 @@
             <th>Email</th>
             <th>Is_active</th>
             <th>Result</th>
+            <th>Action</th>
         </tr>
 
         {% for s in students %}
@@ -26,6 +27,7 @@
             <td>{{ s.city }}</td>
             <td>{{ s.email }}</td>
             <td>{{ s.is_active }}</td>
+
             <td>
                 {% if s.marks > 50 %}
                 pass
@@ -33,7 +35,7 @@
                 fail
                 {% endif %}
             </td>
-        
+{% comment %}         
         </tr>
         {% endfor %}
     </table>
@@ -58,9 +60,9 @@
         <th>Is active</th>
 
         <th>Result</th>
-      </tr>
+      </tr> {% endcomment %}
 
-      {% for s in students_marks %}
+      {% comment %} {% for s in students_marks %}
       <tr>
         <td>{{ s.name }}</td>
         <td>{{ s.marks }}</td>
@@ -76,7 +78,9 @@
             {% else %} 
             Fail 
             {% endif %}
-        </td>
+        </td> {% endcomment %}
+        <td><a href="{% url 'update_student' s.id %}">Update</a>
+        <a href="{% url 'delete_student' s.id %}">Delete</a></td>
       </tr>
       {% endfor %}
     </table>
